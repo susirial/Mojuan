@@ -11,6 +11,7 @@ import ChatHomeV3 from "./components/LlmChat/ChatHomeV3";
 import ChatHome from "./components/LlmChat/ChatHome";
 import TestUseCallBack from "./components/LlmChat/TestUseCallBack";
 import MyDropzone from "./components/LlmChat/TestUseDropZone";
+import ChatThread from "./components/LlmChat/ChatThread";
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path:'/dropfile',
     element: <MyDropzone/>,
+  },
+  {
+    path:'/tid-test',
+    element:<ChatThread/>
   },
 
 ]);

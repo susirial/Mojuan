@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
 
       // 正则表达式写法
-      '^/(test|testpost|stream|ragstream|msgstream|ingest|runs)': {
+      '^/(test|testpost|stream|ragstream|msgstream|ingest|runs|threads)': {
         target: 'http://127.0.0.1:8100 ',
         changeOrigin: true,
 
