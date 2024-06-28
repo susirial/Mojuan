@@ -1,3 +1,4 @@
+![wlcome](https://github.com/susirial/Mojuan/blob/main/new_aigc_cover.png)
 ## 项目背景
 
 【1】受到很多项目启示，比如 chatbot-ui, opengpts，gpt research ...
