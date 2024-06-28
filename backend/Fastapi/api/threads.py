@@ -20,7 +20,7 @@ async def get_thread_history(
     history = None
     try:
         res = llm_agent_executor.get_state(thread_cfg)
-        history = res.values
+        history = res.values['messages']
     except Exception as e:
         print('[get_thread_history] error :{}'.format(e))
     return history
