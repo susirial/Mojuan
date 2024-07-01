@@ -24,8 +24,8 @@
 - 关系数据库：Postgres
 
 ---
-
-Demo here : www.chatroller.cn
+## Demo
+View the latest demo : www.chatroller.cn
 
 项目快速启动
 
