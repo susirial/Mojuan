@@ -1,5 +1,7 @@
 
 
+![show](https://github.com/susirial/Mojuan/blob/main/docs/introduction/look.png)
+
 ## Project Background
 
 【1】Inspired by many projects, such as chatbot-ui, opengpts, gpt research…
