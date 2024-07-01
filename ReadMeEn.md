@@ -64,9 +64,9 @@ pip install python-magic
 
 #### 【2】 Install and configure the Postgres database 
 
-You can find installation tutorials for the Postgres database online. You can refer to the official website **https://www.postgresql.org/** for installation.
+- You can find installation tutorials for the Postgres database online. You can refer to the official website **https://www.postgresql.org/** for installation.
 
-It’s recommended to also install pgAdmin locally for easy management of the Postgres database **https://www.pgadmin.org/**
+- It’s recommended to also install pgAdmin locally for easy management of the Postgres database **https://www.pgadmin.org/**
 
 Create tables related to the project: Open pgAdmin and set up the relevant forms through the UI interface.
 
