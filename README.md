@@ -1,4 +1,5 @@
 ![wlcome](https://github.com/susirial/Mojuan/blob/main/new_aigc_cover.png)
+![show](https://github.com/susirial/Mojuan/blob/main/docs/introduction/look.png)
 
 [中文](https://github.com/susirial/Mojuan/blob/main/README.md) ｜ [English ](https://github.com/susirial/Mojuan/blob/main/ReadMeEn.md)
 ## 项目背景
