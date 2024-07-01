@@ -225,7 +225,7 @@ select \* from email_verification_codes;
 
 ![image.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_3.png)
 
-**项目处于边教学边开发阶段， 有问题麻烦发送到我的邮箱 support@chatroller.com**
+**有问题麻烦发送到我的邮箱 support@chatroller.com**
 
 B 站视频：[https://www.bilibili.com/video/BV1rz421875f/](https://www.bilibili.com/video/BV1rz421875f/)
 
