@@ -12,6 +12,9 @@
 
 【4】 Demonstrates how to use Langchain for the development of LLm applications.
 
+【5】 Utilize excellent large language models and embedding models from China.
+
+
 **Highlights**
 
 - This project attempts to use Chinese domestic models and, through relatively simple means, such as using local vector databases and relational databases, to build a locally accessible AI application that is easy for individuals to use.
