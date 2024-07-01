@@ -171,21 +171,21 @@ Find `backend/app/llm_cfg.py` and add the following parameters.
 
 ```JavaScript
 
-# zhipu : https://bigmodel.cn/dev/howuse/introduction 
+# zhipu（required） : https://bigmodel.cn/dev/howuse/introduction 
 ZHIPU_AK = os.environ["ZHIPU_AK"]
 
-# qianfan : https://qianfan.cloud.baidu.com/
+# qianfan（required） : https://qianfan.cloud.baidu.com/
 MY_QIANFAN_AK = os.environ["MY_QIANFAN_AK"]
 MY_QIANFAN_SK = os.environ["MY_QIANFAN_SK"]
 
-# Qwen : https://help.aliyun.com/zh/dashscope/developer-reference/api-details
+# Qwen（required） : https://help.aliyun.com/zh/dashscope/developer-reference/api-details
 DASHSCOPE_API_KEY = os.environ["DASHSCOPE_API_KEY"]
 
-# Langsmith Key
+# Langsmith Key （optional）
 MY_LANGCHAIN_API_KEY = os.environ["LANGCHAIN_API_KEY"]
 
 
-# Postgres database settings: Local/Cloud
+# Postgres database settings: Local/Cloud（required）
 POSTGRES_HOST = 'localhost'
 POSTGRES_PORT = 5432
 POSTGRES_DB = 'chatroller'
