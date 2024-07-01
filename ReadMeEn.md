@@ -199,7 +199,7 @@ cd backend
 uvicorn app.server:app --reload --port 8100
 ```
 
-##【5】 Registration and Login
+###【5】 Registration and Login
 
 You need to register before logging in (no verification code is sent by email, you can implement it yourself). 
 The email verification code needs to be checked from the database. You can use pgAdmin to open email_verification_codes to view.
