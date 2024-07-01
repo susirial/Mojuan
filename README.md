@@ -42,15 +42,9 @@ npm run dev
 
     poetry install
 
-    **安装 libmagic：**
+    pip install libmagic (linux)
 
-linux :
-
-        pip install libmagic
-
-    windows
-
-        pip install python-magic-bin
+    pip install python-magic-bin (windows)
 
     pip install qianfan
 
@@ -88,11 +82,11 @@ linux :
 
 <1> 建立数据库 ： **chatroller**
 
-![db_1.png](安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_1.png)
+![db_1.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_1.png)
 
 <2> 打开 Query Tool
 
-![db_2.png](安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_2.png)
+![db_2.png]([安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_2.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_2.png))
 
 <3> 依次输入下面的命令并执行 （在**chatroller 中创建表**）
 
