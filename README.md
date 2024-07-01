@@ -34,9 +34,189 @@ npm install
 npm run dev
 ```
 
-后端
+# 后端
 
-TBD
+## 【1】 安装必要的包
+
+    pip install poetry
+
+    poetry install
+
+    **安装 libmagic：**
+
+linux :
+
+        pip install libmagic
+
+    windows
+
+        pip install python-magic-bin
+
+    pip install qianfan
+
+    pip install zhipuai
+
+    pip install dashscope
+
+    pip install elasticsearch
+
+    pip install pandas
+
+    pip install appbuilder
+
+    pip install pydantic[email]
+
+    pip install passlib
+
+    pip install uvicorn
+
+    pip install bcrypt
+
+    pip install chromadb
+
+    pip install python-magic
+
+---
+
+## 【2】安装和配置 Postgres 数据库
+
+- 大家可以从网上找一下 Postgres **数据库** 安装教程。可以参考官网[https://www.postgresql.org/](https://www.postgresql.org/) 来安装。
+
+- 最好本地再安装上 pgAdmin 轻松管理 Postgres 数据库 [https://www.pgadmin.org/](https://www.pgadmin.org/)
+
+**生成项目相关的表 ：** 打开 pgAdmin， 通过 UI 界面设置相关表单
+
+<1> 建立数据库 ： **chatroller**
+
+![db_1.png](安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_1.png)
+
+<2> 打开 Query Tool
+
+![db_2.png](安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_2.png)
+
+<3> 依次输入下面的命令并执行 （在**chatroller 中创建表**）
+
+```JavaScript
+【1】
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+【2】
+CREATE TABLE cusers (
+    id SERIAL,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    user_email VARCHAR(255) UNIQUE NOT NULL,
+    hashed_password TEXT NOT NULL,
+    doc_visit_days INTEGER DEFAULT 0,
+    last_login TIMESTAMP WITH TIME ZONE,
+    user_id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    user_mask INTEGER DEFAULT 1,
+    user_group VARCHAR(50) DEFAULT 'free',
+    user_status VARCHAR(50) DEFAULT 'available',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'),
+    hl_llm_visit_days INTEGER DEFAULT 0
+);
+
+【3】
+CREATE TABLE email_verification_codes (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    expires_at TIMESTAMP NOT NULL,
+    is_used BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+【4】
+CREATE TABLE IF NOT EXISTS assistant (
+    assistant_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    config JSON NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'),
+    public BOOLEAN NOT NULL
+);
+
+【5】
+CREATE TABLE IF NOT EXISTS thread (
+    thread_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    assistant_id UUID REFERENCES assistant(assistant_id) ON DELETE SET NULL,
+    user_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT (CURRENT_TIMESTAMP AT TIME ZONE 'UTC')
+);
+
+【6】
+CREATE TABLE IF NOT EXISTS checkpoints (
+    thread_id TEXT,
+    checkpoint BYTEA,
+    thread_ts TIMESTAMPTZ,
+    parent_ts TIMESTAMPTZ
+);
+
+【7】
+ALTER TABLE checkpoints
+    DROP CONSTRAINT IF EXISTS checkpoints_pkey,
+    ADD PRIMARY KEY (thread_id),
+    ADD COLUMN IF NOT EXISTS thread_ts TIMESTAMPTZ,
+    ADD COLUMN IF NOT EXISTS parent_ts TIMESTAMPTZ;
+
+
+【8】
+UPDATE checkpoints
+    SET thread_ts = CURRENT_TIMESTAMP AT TIME ZONE 'UTC'
+WHERE thread_ts IS NULL;
+
+【9】
+ALTER TABLE checkpoints
+    DROP CONSTRAINT IF EXISTS checkpoints_pkey,
+    ADD PRIMARY KEY (thread_id, thread_ts);
+
+【10】
+ALTER TABLE assistant
+    DROP CONSTRAINT IF EXISTS fk_assistant_user_id,
+    ALTER COLUMN user_id TYPE VARCHAR USING (user_id::text);
+
+【11】
+ALTER TABLE thread
+    DROP CONSTRAINT IF EXISTS fk_thread_user_id,
+    ALTER COLUMN user_id TYPE VARCHAR USING (user_id::text);
+```
+
+## 【3】设置项目使用的参数
+
+找到 backend/app/llm_cfg.py，增加下面的参数
+
+```JavaScript
+
+# zhipu
+ZHIPU_AK = os.environ["ZHIPU_AK"]
+
+# 千帆
+MY_QIANFAN_AK = os.environ["MY_QIANFAN_AK"]
+
+MY_QIANFAN_SK = os.environ["MY_QIANFAN_SK"]
+
+# 通义千问 在线
+DASHSCOPE_API_KEY = os.environ["DASHSCOPE_API_KEY"]
+
+MY_LANGCHAIN_API_KEY = os.environ["LANGCHAIN_API_KEY"]
+
+
+# Postgres数据库: 本地、云端 均可
+POSTGRES_HOST = 'localhost'
+POSTGRES_PORT = 5432
+POSTGRES_DB = 'chatroller'
+POSTGRES_USER = 'postgres'
+POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
+
+```
+
+## 【4】启动后端
+
+```JavaScript
+cd backend
+uvicorn app.server:app --reload --port 8100
+```
 
 ---
 
