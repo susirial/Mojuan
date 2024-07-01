@@ -22,7 +22,8 @@
 
 ---
 
-**Demo here** : [www.chatroller.cn](http://www.chatroller.cn/)
+## Demo
+View the latest demo : www.chatroller.cn
 
 ## Quick Start for the Project
 
