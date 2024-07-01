@@ -8,7 +8,7 @@
 
 【3】很多项目使用 openai 等一些国内不方便使用的模型
 
-【4】 展示如何使用 Langchain 进行LLm 应用开发 
+【4】 展示如何使用 Langchain 进行 LLm 应用开发
 
 **亮点**
 
@@ -86,7 +86,7 @@ npm run dev
 
 <2> 打开 Query Tool
 
-![db_2.png]([安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_2.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_2.png))
+![db_2.png](<[安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_2.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_2.png)>)
 
 <3> 依次输入下面的命令并执行 （在**chatroller 中创建表**）
 
@@ -213,6 +213,14 @@ uvicorn app.server:app --reload --port 8100
 ```
 
 ---
+
+## 【5】注册登录
+
+登录时需要先注册（邮箱并没有发送验证码，你可以自己实现），邮箱的验证码需要从数据库里查看。可以用 pgAdmin 打开 email_verification_codes 查看
+
+select \* from email_verification_codes;
+
+![image.png](安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/image.png)
 
 **项目处于边教学边开发阶段， 有问题麻烦发送到我的邮箱 support@chatroller.com**
 
