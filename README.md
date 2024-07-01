@@ -86,7 +86,7 @@ npm run dev
 
 <2> 打开 Query Tool
 
-![db_2.png](<[安装方法+5a7f8f4f-a279-46d2-88ed-a61a7e968492/db_2.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_2.png)>)
+![db_2.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_2.png)
 
 <3> 依次输入下面的命令并执行 （在**chatroller 中创建表**）
 
