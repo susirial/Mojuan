@@ -185,21 +185,21 @@ ALTER TABLE thread
 
 ```JavaScript
 
-# 智谱AI ： https://bigmodel.cn/dev/howuse/introduction 
+# 智谱AI(必须) ： https://bigmodel.cn/dev/howuse/introduction 
 ZHIPU_AK = os.environ["ZHIPU_AK"]
 
-# 千帆 ： https://qianfan.cloud.baidu.com/
+# 千帆(必须) ： https://qianfan.cloud.baidu.com/
 MY_QIANFAN_AK = os.environ["MY_QIANFAN_AK"]
 MY_QIANFAN_SK = os.environ["MY_QIANFAN_SK"]
 
-# 通义千问 ：https://help.aliyun.com/zh/dashscope/developer-reference/api-details
+# 通义千问(必须) ：https://help.aliyun.com/zh/dashscope/developer-reference/api-details
 DASHSCOPE_API_KEY = os.environ["DASHSCOPE_API_KEY"]
 
-# Langsmith Key
+# Langsmith Key(可选)
 MY_LANGCHAIN_API_KEY = os.environ["LANGCHAIN_API_KEY"]
 
 
-# Postgres数据库: 本地、云端 均可
+# Postgres数据库: 本地、云端 均可 (必须)
 POSTGRES_HOST = 'localhost'
 POSTGRES_PORT = 5432
 POSTGRES_DB = 'chatroller'
