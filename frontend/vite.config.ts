@@ -1,20 +1,29 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-
+  css: {
+    postcss: {
+      plugins: [
+        tailwindcss(),
+        autoprefixer(),
+       
+      ],
+    },
+  },
   server: {
+    watch: {
+      usePolling: true
+    },
     proxy: {
-
-      // 正则表达式写法
-      '^/(test|testpost|stream|ragstream|msgstream|ingest|runs|threads)': {
-        target: 'http://127.0.0.1:8100 ',
+      "^/(assistants|threads|ingest|runs|register|login|listusers|vemail|order)": {
+        target: "http://127.0.0.1:8100",
         changeOrigin: true,
-
       },
-    }
-  }
+    },
+  },
 
 })

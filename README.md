@@ -1,4 +1,5 @@
 ![wlcome](https://github.com/susirial/Mojuan/blob/main/new_aigc_cover.png)
+
 ## 项目背景
 
 【1】受到很多项目启示，比如 chatbot-ui, opengpts，gpt research ...
@@ -17,9 +18,9 @@
 
 - 前端采用 Vite + ReAct， 后端使用 FastApi + Langchain
 
-- 向量数据库：Chroma
+- 向量数据库：Chroma/Elastic Search
 
-- 关系数据库：Sqlite
+- 关系数据库：Postgres
 
 ---
 
@@ -35,24 +36,7 @@ npm run dev
 
 后端
 
-```JavaScript
-cd backend
-pip install -r requirements.txt
-
-# 设置环境变量 法<1>
-# Glm4 MY_ZHIPUAI_API_KEY： 你的智谱AI Key
-# 比如 windows : set MY_ZHIPUAI_API_KEY=你的KEY
-
-# 设置环境变量 法<2>
-在pycharm 中添加环境变量: 点击 Run->Edit Configutations ->Environment Varialbles
-
-# 启动后端服务 法<1>
-uvicorn Fastapi.server:app --reload
-
-# 启动后端服务 法<2>
-# pycharm 中直接运行 server.py 中的main函数
-
-```
+TBD
 
 ---
 
@@ -60,6 +44,5 @@ uvicorn Fastapi.server:app --reload
 
 B 站视频：[https://www.bilibili.com/video/BV1rz421875f/](https://www.bilibili.com/video/BV1rz421875f/)
 
-运行起来之后， 可以在 router.tsx 中查看目前可用的 url
-
-启动对话界面： [http://localhost:5173/chathomev3](http://localhost:5173/chathomev3)
+启动对话界面： [http://localhost:5173](http://localhost:5173)
+登录界面： [http://localhost:5173/signin](http://localhost:5173/signin)

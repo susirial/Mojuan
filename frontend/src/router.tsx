@@ -1,62 +1,60 @@
-
-import {
-  createBrowserRouter,
-} from "react-router-dom";
-import MyHome from "./components/MyHome";
-import MyPage from "./components/MyPage";
-import Stream from "./components/Stream";
-import AiTalk from "./components/AiTalk";
-import ChatHomeV2 from "./components/LlmChat/ChatHomeV2";
-import ChatHomeV3 from "./components/LlmChat/ChatHomeV3";
-import ChatHome from "./components/LlmChat/ChatHome";
-import TestUseCallBack from "./components/LlmChat/TestUseCallBack";
-import MyDropzone from "./components/LlmChat/TestUseDropZone";
-import ChatThread from "./components/LlmChat/ChatThread";
-
+import { createBrowserRouter } from "react-router-dom";
+import Home from "../src/components/Home";
+import NotFound from "./components/NotFound";
+import ChatRolUserSignIn from "./components/ChatRolUserSignIn";
+import ChatRol404 from "./components/ChatRol404";
+import ChatRol403 from "./components/ChatRol403";
+import ChatRol500 from "./components/ChatRol500";
+import ChatRolStepReg from "./components/ChatRolStepReg";
+import ChatRolResetPass from "./components/ChatRolResetPass";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MyHome />,
-  },
-  {
-    path: "/mypage",
-    element: <MyPage/>,
-  },
-  {
-    path: "/talk",
-    element: <Stream/>,
-  },
-  {
-    path: "/aitalk",
-    element: <AiTalk/>,
-  },
-  {
-    path: "/chathome",
-    element: <ChatHome />,
-  },
-  {
-    path: "/chathomev2",
-    element: <ChatHomeV2 />,
-  },
-  {
-    path: "/chathomev3",
-    element: <ChatHomeV3 />,
-  },
-  {
-    path: "/cbtest",
-    element: <TestUseCallBack />,
-  },
-  {
-    path:'/dropfile',
-    element: <MyDropzone/>,
-  },
-  {
-    path:'/tid-test',
-    element:<ChatThread/>
-  },
+    {
+        path: "/",
+        element: <Home/>
+    },
+    {
+        path:"/thread/:chatId",
+         element: <Home />
+    },
+    {
+        path:"/assistant/:assistantId",
+        element: <Home />    
+    },
+    {
+        path:"/cfg",
+        element: <Home edit={true}/>    
+    },
+    {
+        path:"/signup",  
+        element: <ChatRolStepReg/>
+    },
+    {
+        path:"/resetpwd",
+        element: <ChatRolResetPass/>
+    },
+    {
+        path:"/signin",
+        element: <ChatRolUserSignIn/>   
+    },
+    {
+        path:"404",
+        element:<ChatRol404/>  
+    },
+    {
+        path:"403",
+        element:<ChatRol403/>  
+    },
+    {
+        path:"/500/:errorCode",
+        element:<ChatRol500/>  
+    },
+    {
+        path:"*",
+        element: <NotFound />    
+    },
+
 
 ]);
-
 
 export default router;
