@@ -42,7 +42,9 @@ npm run dev
 
 # 后端
 
-## 【1】 安装必要的包
+## 【1】 安装必要的包 
+    请不要手动安装langchain包或者将项目放在有langchian的环境
+    项目使用特定版本的langchain
 
     pip install poetry
 
