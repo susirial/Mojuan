@@ -45,6 +45,9 @@ npm run dev
 ### **Backend**
 
 #### 【1】 Install necessary packages
+Please do not manually install the langchain package or place the project in an environment with langchain.
+The project uses a specific version of langchain.
+
 
 ```JavaScript
 pip install poetry
