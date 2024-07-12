@@ -29,7 +29,7 @@ from langchain_openai import AzureOpenAIEmbeddings, OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
 from app.ingest import ingest_blob
-from app.llm_cfg import ELASTIC_HOST_HTTP, ELASTIC_ACCESS_PASSWORD, DEFAULT_VDB_768_INDEX_NAME, VECTOR_QUERY_FIELD, \
+from app.llm_cfg import DEFAULT_VDB_768_INDEX_NAME, VECTOR_QUERY_FIELD, \
     BCE_EMBEDDING_MODEL_PATH, BCE_EMBEDDING_MODEL_KWARGS, BCE_EMBEDDING_MODEL_ENCODE_KWARGS, MY_QIANFAN_AK, \
     MY_QIANFAN_SK, DEFAULT_VDB_1024_INDEX_NAME
 from app.parsing import MIMETYPE_BASED_PARSER

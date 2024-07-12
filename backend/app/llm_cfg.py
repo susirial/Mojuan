@@ -3,7 +3,7 @@
 # ELASTIC_HOST_HTTP = os.environ["ELASTIC_HOST_HTTP"]
 # ELASTIC_ACCESS_NAME = 'elastic'
 # ELASTIC_ACCESS_PASSWORD = os.environ["ELASTIC_ACCESS_PASSWORD"]
-
+import os
 
 # 768 维度
 DEFAULT_VDB_768_INDEX_NAME = 'index_ex_768_vectors'

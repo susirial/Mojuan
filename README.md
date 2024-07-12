@@ -2,6 +2,7 @@
 ![show](https://github.com/susirial/Mojuan/blob/main/docs/introduction/look.png)
 
 [中文](https://github.com/susirial/Mojuan/blob/main/README.md) ｜ [English ](https://github.com/susirial/Mojuan/blob/main/ReadMeEn.md)
+
 ## 项目背景
 
 【1】受到很多项目启示，比如 chatbot-ui, opengpts，gpt research ...
@@ -27,7 +28,9 @@
 - 关系数据库：Postgres
 
 ---
+
 ## Demo
+
 View the latest demo : www.chatroller.cn
 
 项目快速启动
@@ -44,37 +47,8 @@ npm run dev
 
 ## 【1】 安装必要的包
 
-    pip install poetry
-
-    poetry install
-
-    pip install libmagic (linux)
-
-    pip install python-magic-bin (windows)
-
-    pip install qianfan
-
-    pip install zhipuai
-
-    pip install dashscope
-
-    pip install elasticsearch
-
-    pip install pandas
-
-    pip install appbuilder
-
-    pip install pydantic[email]
-
-    pip install passlib
-
-    pip install uvicorn
-
-    pip install bcrypt
-
-    pip install chromadb
-
-    pip install python-magic
+    cd backend
+    pip install -r requirements.txt
 
 ---
 
@@ -188,7 +162,7 @@ ALTER TABLE thread
 
 ```JavaScript
 
-# 智谱AI(必须) ： https://bigmodel.cn/dev/howuse/introduction 
+# 智谱AI(必须) ： https://bigmodel.cn/dev/howuse/introduction
 ZHIPU_AK = os.environ["ZHIPU_AK"]
 
 # 千帆(必须) ： https://qianfan.cloud.baidu.com/

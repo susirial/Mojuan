@@ -1,5 +1,3 @@
-
-
 ![show](https://github.com/susirial/Mojuan/blob/main/docs/introduction/look.png)
 
 ## Project Background
@@ -14,7 +12,6 @@
 
 【5】 Utilize excellent large language models and embedding models from China.
 
-
 **Highlights**
 
 - This project attempts to use Chinese domestic models and, through relatively simple means, such as using local vector databases and relational databases, to build a locally accessible AI application that is easy for individuals to use.
@@ -28,6 +25,7 @@
 ---
 
 ## Demo
+
 View the latest demo : www.chatroller.cn
 
 ## Quick Start for the Project
@@ -40,34 +38,14 @@ npm install
 npm run dev
 ```
 
-
-
 ### **Backend**
 
 #### 【1】 Install necessary packages
 
-```JavaScript
-pip install poetry
-poetry install
-pip install libmagic （linux）
-pip install python-magic-bin （windows）
-pip install qianfan
-pip install zhipuai
-pip install dashscope
-pip install elasticsearch
-pip install pandas
-pip install appbuilder
-pip install pydantic[email]
-pip install passlib
-pip install uvicorn
-pip install bcrypt
-pip install chromadb
-pip install python-magic
-```
+    cd backend
+    pip install -r requirements.txt
 
-
-
-#### 【2】 Install and configure the Postgres database 
+#### 【2】 Install and configure the Postgres database
 
 - You can find installation tutorials for the Postgres database online. You can refer to the official website **https://www.postgresql.org/** for installation.
 
@@ -77,7 +55,6 @@ Create tables related to the project: Open pgAdmin and set up the relevant forms
 
 **<1> Create database: chatroller**
 ![db_1.png](https://github.com/susirial/Mojuan/blob/main/docs/introduction/db_1.png)
-
 
 **<2> Open the Query Tool**
 
@@ -172,11 +149,12 @@ ALTER TABLE thread
 ```
 
 ### 【3】 Set project parameters
+
 Find `backend/app/llm_cfg.py` and add the following parameters.
 
 ```JavaScript
 
-# zhipu（required） : https://bigmodel.cn/dev/howuse/introduction 
+# zhipu（required） : https://bigmodel.cn/dev/howuse/introduction
 ZHIPU_AK = os.environ["ZHIPU_AK"]
 
 # qianfan（required） : https://qianfan.cloud.baidu.com/
@@ -207,7 +185,7 @@ uvicorn app.server:app --reload --port 8100
 
 ###【5】 Registration and Login
 
-You need to register before logging in (no verification code is sent by email, you can implement it yourself). 
+You need to register before logging in (no verification code is sent by email, you can implement it yourself).
 The email verification code needs to be checked from the database. You can use pgAdmin to open email_verification_codes to view.
 
 select \* from email_verification_codes;
